@@ -1,2 +1,2 @@
 * linguist-vendored
-*.php inguist-language=Drupal
+*.php linguist-language=Drupal
