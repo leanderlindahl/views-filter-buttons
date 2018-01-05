@@ -1,0 +1,45 @@
+/**
+ * Hide <select> and submit-button
+ */
+#views-exposed-form-filter-articles-page-1 .form-type-select {
+  display: none;
+}
+#views-exposed-form-filter-articles-page-1 .form-submit {
+  display: none;
+}
+
+/**
+ * Pure styling, should probably be put in your theme stylesheet
+ * instead of in this module
+ */
+.links-list {
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+}
+.links-list li {
+  margin: 25px 5px 25px 0;
+  float: none;
+  display: inline-block;
+  margin: 25px 5px 25px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.links-list li a {
+  background-color: #ccc;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px 16px 9px;
+  color: #fff;
+  line-height: 23px;
+  text-decoration: none;
+  border-bottom: none;
+}
+.links-list li a.active {
+  background-color: #0071b3;
+}
+.view-filter-articles .views-row {
+  float: left;
+  padding: 15px;
+}

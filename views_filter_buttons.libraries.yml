@@ -1,0 +1,13 @@
+views_filter_buttons.forms:
+   version: VERSION
+   css:
+     theme:
+       css/views_filter_buttons.theme.css: {}
+
+views_filter_buttons.enable:
+  version: VERSION
+  js:
+    js/views_filter_buttons.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

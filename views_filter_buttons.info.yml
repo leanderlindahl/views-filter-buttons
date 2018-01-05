@@ -1,0 +1,5 @@
+name: Views Filter Buttons
+type: module
+description: 'Turn exposed filter select list in Views into buttons.'
+package: Custom
+core: 8.x

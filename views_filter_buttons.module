@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Module file for Views Filter Buttons.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function views_filter_buttons_form_alter(&$form, $form_state, $form_id) {
+
+  // Apply the form_alter to a specific form #id
+  // the form #id can be found through inspecting the markup.
+  if ($form['#id'] == 'views-exposed-form-filter-articles-page-1') {
+
+    // Include a js and css, which was defined in libraries.yml.
+    $form['#attached']['library'][] = 'views_filter_buttons/views_filter_buttons.enable';
+    $form['#attached']['library'][] = 'views_filter_buttons/views_filter_buttons.forms';
+
+    // Extract the options from the Views Exposed Filter <select>-list.
+    $links = $form['field_tags_target_id']['#options'];
+
+    // Iterate over the options ($links) to build an array of links.
+    $i = 0;
+    $links_array = [];
+    foreach ($links as $tid => $term_name) {
+      if ($tid == 'All') {
+        $links_array[$i]['#markup'] = '<span class="filter-tab"><a href="" class="active" id="' . $tid . '">' . $term_name . '</a></span>';
+      }
+      else {
+        $links_array[$i]['#markup'] = '<span class="filter-tab"><a href="" id="' . $tid . '">' . $term_name . '</a></span>';
+      }
+      $i++;
+    }
+
+    // Create the item-list the form should render.
+    $form['links'] = [
+      '#theme' => 'item_list',
+      '#items' => $links_array,
+      '#attributes' => ['class' => ['links-list']],
+    ];
+  }
+}
